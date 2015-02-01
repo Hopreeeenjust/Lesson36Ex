@@ -452,6 +452,12 @@
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gZv-ZW-Mre" id="8IE-X2-5zx"/>
+                                                        <segue destination="vcA-6P-NBD" kind="popoverPresentation" popoverAnchorView="xFn-F4-yom" id="W4c-El-Jkq">
+                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
+                                                        </segue>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -547,6 +553,9 @@
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="gZv-ZW-Mre" id="DCg-WN-jLw"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -615,10 +624,43 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="dateOfBirthField" destination="xFn-F4-yom" id="bpe-5e-L7N"/>
+                        <outlet property="educationField" destination="fqE-sT-ecd" id="6Sz-nJ-2Qk"/>
+                        <outlet property="firstNameField" destination="oBC-bC-3XD" id="YW1-R0-0cb"/>
+                        <outlet property="genderControl" destination="FVB-9B-zqK" id="MyE-0Q-7Rb"/>
+                        <outlet property="lastNameField" destination="E8s-Rf-8hL" id="AvA-Id-S13"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="osh-9g-DBf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-794.25" y="823.5"/>
+            <point key="canvasLocation" x="-795" y="823"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="blP-DO-NS4">
+            <objects>
+                <viewController id="vcA-6P-NBD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7cW-z1-hjK"/>
+                        <viewControllerLayoutGuide type="bottom" id="YCf-wu-3Ur"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JMa-jN-Nlg">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-0Y-SoX">
+                                <rect key="frame" x="0.0" y="227" width="600" height="162"/>
+                                <date key="date" timeIntervalSinceReferenceDate="444487724.10499603">
+                                    <!--2015-02-01 12:48:44 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nFE-Mf-OfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="68" y="785"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZxF-Hc-IfG">
