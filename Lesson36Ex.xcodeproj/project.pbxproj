@@ -14,6 +14,9 @@
 		E07E55EF1A7E0B1E00994324 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E07E55EE1A7E0B1E00994324 /* Images.xcassets */; };
 		E07E55F21A7E0B1E00994324 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E07E55F01A7E0B1E00994324 /* LaunchScreen.xib */; };
 		E07E55FE1A7E0B1E00994324 /* Lesson36ExTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E07E55FD1A7E0B1E00994324 /* Lesson36ExTests.m */; };
+		E0AEC94D1A7E36F000FB2272 /* Cq8vF.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC94C1A7E36F000FB2272 /* Cq8vF.png */; };
+		E0AEC94F1A7E385600FB2272 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC94E1A7E385600FB2272 /* Info.png */; };
+		E0AEC9511A7E395100FB2272 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC9501A7E395100FB2272 /* 1.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +43,9 @@
 		E07E55F71A7E0B1E00994324 /* Lesson36ExTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Lesson36ExTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07E55FC1A7E0B1E00994324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07E55FD1A7E0B1E00994324 /* Lesson36ExTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Lesson36ExTests.m; sourceTree = "<group>"; };
+		E0AEC94C1A7E36F000FB2272 /* Cq8vF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cq8vF.png; path = Images/Cq8vF.png; sourceTree = SOURCE_ROOT; };
+		E0AEC94E1A7E385600FB2272 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Info.png; path = Images/Info.png; sourceTree = SOURCE_ROOT; };
+		E0AEC9501A7E395100FB2272 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = "../../Lesson26Ex/Image Files/1.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +102,9 @@
 		E07E55E11A7E0B1E00994324 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				E0AEC9501A7E395100FB2272 /* 1.png */,
+				E0AEC94E1A7E385600FB2272 /* Info.png */,
+				E0AEC94C1A7E36F000FB2272 /* Cq8vF.png */,
 				E07E55E21A7E0B1E00994324 /* Info.plist */,
 				E07E55E31A7E0B1E00994324 /* main.m */,
 			);
@@ -199,7 +208,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0AEC94D1A7E36F000FB2272 /* Cq8vF.png in Resources */,
 				E07E55ED1A7E0B1E00994324 /* Main.storyboard in Resources */,
+				E0AEC94F1A7E385600FB2272 /* Info.png in Resources */,
+				E0AEC9511A7E395100FB2272 /* 1.png in Resources */,
 				E07E55F21A7E0B1E00994324 /* LaunchScreen.xib in Resources */,
 				E07E55EF1A7E0B1E00994324 /* Images.xcassets in Resources */,
 			);
@@ -414,6 +426,7 @@
 				E07E56031A7E0B1E00994324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E07E56041A7E0B1E00994324 /* Build configuration list for PBXNativeTarget "Lesson36ExTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +435,7 @@
 				E07E56061A7E0B1E00994324 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
