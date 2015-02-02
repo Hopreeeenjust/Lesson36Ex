@@ -851,6 +851,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="datePicker" destination="Yco-0Y-SoX" id="Jrs-va-36a"/>
                         <outlet property="doneButton" destination="s38-0x-We5" id="D5a-eg-tAj"/>
                     </connections>
                 </viewController>

@@ -18,7 +18,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    if (self.dateOfBirth) {
+        self.datePicker.date = self.dateOfBirth;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,7 +35,7 @@
 
 - (IBAction)actionDoneButtonPushed:(UIBarButtonItem *)sender {
     self.dateOfBirth = self.currentDateOfBirth;
-    [self setDate];
+    [self.delegate setDateOfBirthFromDate:self.dateOfBirth];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -41,15 +43,6 @@
     self.currentDateOfBirth = sender.date;
 }
 
-#pragma mark - Methods
 
-- (void)setDate {
-//    ViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
-//    NSDate *dateOfBirth = self.dateOfBirth;
-//    NSDateFormatter *formatter = [NSDateFormatter new];
-//    [formatter setDateFormat:@"dd/MMM/yyyy"];
-//    vc.dateOfBirthField.text = [formatter stringFromDate:dateOfBirth];
-//    [vc.tableView reloadData];
-}
 
 @end

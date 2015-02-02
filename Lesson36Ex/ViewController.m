@@ -11,7 +11,7 @@
 #import "RJDatePickerViewController.h"
 #import "RJEducationViewController.h"
 
-@interface ViewController () <UIPopoverControllerDelegate>
+@interface ViewController () <UITextFieldDelegate, UIPopoverControllerDelegate, RJDatePickerViewDelegate>
 @property (strong, nonatomic) UIPopoverController* popover;
 
 @end
@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.dateOfBirthField.delegate = self;
+    self.educationField.delegate = self;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -54,10 +56,11 @@
 #pragma mark - UITextFieldDelegate
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField {
-    if (textField == self.dateOfBirthField) {
+    if (textField == self.dateOfBirthField) {                      //setting dateOfBirth
         UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"NavDatePickerController"];
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:nav];
+            popover.delegate = self;
             popover.popoverContentSize = CGSizeMake(300, 250);
             CGRect dateOfBirthRect = [self.tableView convertRect:textField.frame fromView:textField.superview];
             [popover presentPopoverFromRect:dateOfBirthRect
@@ -67,7 +70,7 @@
         } else {
             [self presentViewController:nav animated:YES completion:nil];
         }
-    } else if (textField == self.educationField) {
+    } else if (textField == self.educationField) {                  //setting education
         UINavigationController *nav = [self.storyboard instantiateViewControllerWithIdentifier:@"RJNavEducationViewController"];
         if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
             UIPopoverController *popover = [[UIPopoverController alloc] initWithContentViewController:nav];
@@ -94,6 +97,16 @@
 
 - (void)popoverControllerDidDismissPopover:(UIPopoverController *)popoverController {
     
+}
+
+#pragma mark - RJDatePickerViewDelegate
+
+- (void)setDateOfBirthFromDate:(NSDate *)date {
+        NSDate *dateOfBirth = date;
+        NSDateFormatter *formatter = [NSDateFormatter new];
+        [formatter setDateFormat:@"dd/MMM/yyyy"];
+        self.dateOfBirthField.text = [formatter stringFromDate:dateOfBirth];
+        [self.tableView reloadData];
 }
 
 @end
