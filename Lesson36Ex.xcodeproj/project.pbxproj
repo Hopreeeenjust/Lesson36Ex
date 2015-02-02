@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E039EE531A7FB4DC0079FF3C /* RJDatePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E039EE521A7FB4DC0079FF3C /* RJDatePickerViewController.m */; };
+		E039EE561A7FB6380079FF3C /* RJEducationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E039EE551A7FB6380079FF3C /* RJEducationViewController.m */; };
 		E07E55E41A7E0B1E00994324 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E07E55E31A7E0B1E00994324 /* main.m */; };
 		E07E55E71A7E0B1E00994324 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E07E55E61A7E0B1E00994324 /* AppDelegate.m */; };
 		E07E55EA1A7E0B1E00994324 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E07E55E91A7E0B1E00994324 /* ViewController.m */; };
@@ -17,6 +19,7 @@
 		E0AEC94D1A7E36F000FB2272 /* Cq8vF.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC94C1A7E36F000FB2272 /* Cq8vF.png */; };
 		E0AEC94F1A7E385600FB2272 /* Info.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC94E1A7E385600FB2272 /* Info.png */; };
 		E0AEC9511A7E395100FB2272 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = E0AEC9501A7E395100FB2272 /* 1.png */; };
+		E0AEC9561A7E805300FB2272 /* RJInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E0AEC9551A7E805300FB2272 /* RJInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,6 +33,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E039EE511A7FB4DC0079FF3C /* RJDatePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJDatePickerViewController.h; sourceTree = "<group>"; };
+		E039EE521A7FB4DC0079FF3C /* RJDatePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJDatePickerViewController.m; sourceTree = "<group>"; };
+		E039EE541A7FB6380079FF3C /* RJEducationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJEducationViewController.h; sourceTree = "<group>"; };
+		E039EE551A7FB6380079FF3C /* RJEducationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJEducationViewController.m; sourceTree = "<group>"; };
 		E07E55DE1A7E0B1E00994324 /* Lesson36Ex.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Lesson36Ex.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E07E55E21A7E0B1E00994324 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E07E55E31A7E0B1E00994324 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -46,6 +53,8 @@
 		E0AEC94C1A7E36F000FB2272 /* Cq8vF.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Cq8vF.png; path = Images/Cq8vF.png; sourceTree = SOURCE_ROOT; };
 		E0AEC94E1A7E385600FB2272 /* Info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Info.png; path = Images/Info.png; sourceTree = SOURCE_ROOT; };
 		E0AEC9501A7E395100FB2272 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 1.png; path = "../../Lesson26Ex/Image Files/1.png"; sourceTree = "<group>"; };
+		E0AEC9541A7E805300FB2272 /* RJInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RJInfoViewController.h; sourceTree = "<group>"; };
+		E0AEC9551A7E805300FB2272 /* RJInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RJInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +98,12 @@
 			children = (
 				E07E55E51A7E0B1E00994324 /* AppDelegate.h */,
 				E07E55E61A7E0B1E00994324 /* AppDelegate.m */,
+				E039EE541A7FB6380079FF3C /* RJEducationViewController.h */,
+				E039EE551A7FB6380079FF3C /* RJEducationViewController.m */,
+				E039EE511A7FB4DC0079FF3C /* RJDatePickerViewController.h */,
+				E039EE521A7FB4DC0079FF3C /* RJDatePickerViewController.m */,
+				E0AEC9541A7E805300FB2272 /* RJInfoViewController.h */,
+				E0AEC9551A7E805300FB2272 /* RJInfoViewController.m */,
 				E07E55E81A7E0B1E00994324 /* ViewController.h */,
 				E07E55E91A7E0B1E00994324 /* ViewController.m */,
 				E07E55EB1A7E0B1E00994324 /* Main.storyboard */,
@@ -231,7 +246,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E039EE531A7FB4DC0079FF3C /* RJDatePickerViewController.m in Sources */,
+				E0AEC9561A7E805300FB2272 /* RJInfoViewController.m in Sources */,
 				E07E55EA1A7E0B1E00994324 /* ViewController.m in Sources */,
+				E039EE561A7FB6380079FF3C /* RJEducationViewController.m in Sources */,
 				E07E55E71A7E0B1E00994324 /* AppDelegate.m in Sources */,
 				E07E55E41A7E0B1E00994324 /* main.m in Sources */,
 			);

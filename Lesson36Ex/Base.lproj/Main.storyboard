@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Info View Controller-->
         <scene sceneID="wiV-UG-Cjq">
             <objects>
-                <viewController id="mYO-2e-5SW" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InfoController" id="mYO-2e-5SW" customClass="RJInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PGv-fY-sms"/>
                         <viewControllerLayoutGuide type="bottom" id="3CU-m0-MO4"/>
@@ -36,6 +36,9 @@
                                         <include reference="kWf-8z-Z72"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="actionOkButtonPushed:" destination="mYO-2e-5SW" eventType="touchUpInside" id="JnR-f9-qDN"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="This is registration form v 1.0 (c) Hopreeeeenjust" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JvK-AA-xLd">
                                 <rect key="frame" x="16" y="279" width="568" height="41"/>
@@ -57,6 +60,9 @@
                                         <include reference="RHx-2I-sUL"/>
                                         <include reference="iBx-sK-6Va"/>
                                     </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="16" y="278" width="568" height="41"/>
                                 </variation>
                             </label>
                         </subviews>
@@ -103,6 +109,11 @@
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="okButton" destination="0oJ-gG-GSu" id="0Mm-Rd-rNb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o89-7C-xw0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,7 +122,7 @@
         <!--Registration form-->
         <scene sceneID="5dB-7T-86C">
             <objects>
-                <tableViewController id="gZv-ZW-Mre" customClass="ViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ViewController" id="gZv-ZW-Mre" customClass="ViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="iGp-wX-LEA">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -454,9 +465,6 @@
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
                                                         <outlet property="delegate" destination="gZv-ZW-Mre" id="8IE-X2-5zx"/>
-                                                        <segue destination="vcA-6P-NBD" kind="popoverPresentation" popoverAnchorView="xFn-F4-yom" id="W4c-El-Jkq">
-                                                            <popoverArrowDirection key="popoverArrowDirection" up="YES"/>
-                                                        </segue>
                                                     </connections>
                                                 </textField>
                                             </subviews>
@@ -616,12 +624,17 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Registration form" id="hyj-10-gpo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dea-Er-aJb">
-                            <connections>
-                                <segue destination="mYO-2e-5SW" kind="popoverPresentation" identifier="PopoverIdentifier" popoverAnchorBarButtonItem="dea-Er-aJb" id="Z4C-7X-pUF">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
+                        <barButtonItem key="rightBarButtonItem" id="go1-hw-WA9">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="detailDisclosure" lineBreakMode="middleTruncation" id="g4Q-NP-2jY">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="actionInfoButtonPressed:" destination="gZv-ZW-Mre" eventType="touchUpInside" id="BMH-GG-hs4"/>
+                                </connections>
+                            </button>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
@@ -629,6 +642,7 @@
                         <outlet property="educationField" destination="fqE-sT-ecd" id="6Sz-nJ-2Qk"/>
                         <outlet property="firstNameField" destination="oBC-bC-3XD" id="YW1-R0-0cb"/>
                         <outlet property="genderControl" destination="FVB-9B-zqK" id="MyE-0Q-7Rb"/>
+                        <outlet property="infoButton" destination="g4Q-NP-2jY" id="egY-lb-guk"/>
                         <outlet property="lastNameField" destination="E8s-Rf-8hL" id="AvA-Id-S13"/>
                     </connections>
                 </tableViewController>
@@ -636,10 +650,172 @@
             </objects>
             <point key="canvasLocation" x="-795" y="823"/>
         </scene>
-        <!--View Controller-->
+        <!--Navigation Controller-->
+        <scene sceneID="XZM-Zg-gRg">
+            <objects>
+                <navigationController storyboardIdentifier="NavDatePickerController" id="KBf-Fs-yAN" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6Mj-3T-iEZ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="vcA-6P-NBD" kind="relationship" relationship="rootViewController" id="sRP-2W-oa1"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2VX-bc-Z7W" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="72" y="823"/>
+        </scene>
+        <!--Education-->
+        <scene sceneID="WWs-QH-5bl">
+            <objects>
+                <tableViewController storyboardIdentifier="RJEducationViewController" id="oHj-Hu-cNS" customClass="RJEducationViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="PW3-Lc-c7q">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <sections>
+                            <tableViewSection id="otT-Ir-Gm9">
+                                <cells>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="wzo-oJ-azc" style="IBUITableViewCellStyleDefault" id="IFv-Hr-NyC">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IFv-Hr-NyC" id="mmf-Xa-BoR">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Primary " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="wzo-oJ-azc">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="Nls-Dy-COf" style="IBUITableViewCellStyleDefault" id="kDy-av-6hF">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kDy-av-6hF" id="Ow7-R5-b3G">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Secondary" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Nls-Dy-COf">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="JPY-eA-fkP" style="IBUITableViewCellStyleDefault" id="Erg-hn-s5E">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Erg-hn-s5E" id="xED-Tg-My9">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="College" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="JPY-eA-fkP">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="mlW-g2-xUI" detailTextLabel="eJ2-yX-WoH" style="IBUITableViewCellStyleValue2" id="gZm-LN-PdP">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gZm-LN-PdP" id="vHY-dv-o2k">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="mlW-g2-xUI">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Bachelor's Degree" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eJ2-yX-WoH">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="DoB-8N-6z5" detailTextLabel="G6D-1u-xke" style="IBUITableViewCellStyleValue2" id="0qd-00-S2s">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="0qd-00-S2s" id="2jz-Ec-EWE">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="DoB-8N-6z5">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Master's Degree" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="G6D-1u-xke">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="63f-EN-tAc" detailTextLabel="kby-3T-Oo9" style="IBUITableViewCellStyleValue2" id="DRr-Kw-Wqn">
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DRr-Kw-Wqn" id="FqO-jl-jml">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="University" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="63f-EN-tAc">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Doctoral Degree" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kby-3T-Oo9">
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <color key="textColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="oHj-Hu-cNS" id="FJd-hm-Hfv"/>
+                            <outlet property="delegate" destination="oHj-Hu-cNS" id="F1S-te-n7O"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Education" id="GA2-Ae-SSD">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="6kb-fh-hCF">
+                            <connections>
+                                <action selector="actionDoneButtonPushed:" destination="oHj-Hu-cNS" id="R0y-wa-7Qw"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YAy-RN-EfE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="58" y="1683"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="czB-39-OTU">
+            <objects>
+                <navigationController storyboardIdentifier="RJNavEducationViewController" id="Y0E-wL-Ucy" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="6oC-e9-abK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="oHj-Hu-cNS" kind="relationship" relationship="rootViewController" id="Huu-vF-h51"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="exS-Vc-HkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-762" y="1682"/>
+        </scene>
+        <!--Date of birth-->
         <scene sceneID="blP-DO-NS4">
             <objects>
-                <viewController id="vcA-6P-NBD" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DatePickerController" id="vcA-6P-NBD" customClass="RJDatePickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7cW-z1-hjK"/>
                         <viewControllerLayoutGuide type="bottom" id="YCf-wu-3Ur"/>
@@ -648,19 +824,39 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-0Y-SoX">
-                                <rect key="frame" x="0.0" y="227" width="600" height="162"/>
+                            <datePicker contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Yco-0Y-SoX">
+                                <rect key="frame" x="16" y="234" width="563" height="180"/>
                                 <date key="date" timeIntervalSinceReferenceDate="444487724.10499603">
                                     <!--2015-02-01 12:48:44 +0000-->
                                 </date>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="16" y="319" width="368" height="162"/>
+                                </variation>
+                                <connections>
+                                    <action selector="actionDatePickerValueChanged:" destination="vcA-6P-NBD" eventType="valueChanged" id="3W1-yZ-3uY"/>
+                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="Yco-0Y-SoX" secondAttribute="centerY" constant="-24" id="H6S-Cy-s6M"/>
+                            <constraint firstAttribute="centerX" secondItem="Yco-0Y-SoX" secondAttribute="centerX" constant="2.5" id="QVb-9n-Gb9"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Date of birth" id="Upe-bI-iUb">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="s38-0x-We5">
+                            <connections>
+                                <action selector="actionDoneButtonPushed:" destination="vcA-6P-NBD" id="IrE-Sa-EC9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="doneButton" destination="s38-0x-We5" id="D5a-eg-tAj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nFE-Mf-OfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="68" y="785"/>
+            <point key="canvasLocation" x="805" y="823"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ZxF-Hc-IfG">

@@ -14,6 +14,8 @@
 @property (weak, nonatomic) IBOutlet UISegmentedControl *genderControl;
 @property (weak, nonatomic) IBOutlet UITextField *dateOfBirthField;
 @property (weak, nonatomic) IBOutlet UITextField *educationField;
+@property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
+- (IBAction)actionInfoButtonPressed:(UIButton *)infoButton;
 @end
 
