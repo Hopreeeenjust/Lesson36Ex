@@ -17,5 +17,7 @@
 @property (weak, nonatomic) IBOutlet UIButton *infoButton;
 
 - (IBAction)actionInfoButtonPressed:(UIButton *)infoButton;
+- (IBAction)actionTextFieldTextChanged:(UITextField *)sender;
+- (IBAction)actionGenderControlValueChanged:(UISegmentedControl *)sender;
 @end
 

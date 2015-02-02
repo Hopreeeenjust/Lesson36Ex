@@ -27,22 +27,12 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    NSLog(@"date deallocated");
-}
-
 #pragma mark - Actions
 
 - (IBAction)actionDoneButtonPushed:(UIBarButtonItem *)sender {
-    self.dateOfBirth = self.currentDateOfBirth;
-    [self.delegate setDateOfBirthFromDate:self.dateOfBirth];
+    self.dateOfBirth = self.datePicker.date;
+    [self.delegate didFinishEditingDate:self.dateOfBirth];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
-
-- (IBAction)actionDatePickerValueChanged:(UIDatePicker *)sender {
-    self.currentDateOfBirth = sender.date;
-}
-
-
 
 @end

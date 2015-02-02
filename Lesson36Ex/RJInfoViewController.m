@@ -27,10 +27,6 @@
     [super didReceiveMemoryWarning];
 }
 
-- (void)dealloc {
-    NSLog(@"deallocated");
-}
-
 #pragma mark - Actions
 
 - (IBAction)actionOkButtonPushed:(UIButton *)sender {

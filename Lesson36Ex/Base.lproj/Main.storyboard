@@ -169,8 +169,12 @@
                                                 </label>
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oBC-bC-3XD">
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldTextChanged:" destination="gZv-ZW-Mre" eventType="editingDidEnd" id="BMv-ff-F5K"/>
+                                                        <outlet property="delegate" destination="gZv-ZW-Mre" id="Nv6-mM-pY9"/>
+                                                    </connections>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -232,10 +236,14 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XMd-XI-Q5q" id="cfj-GG-LU9">
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your surname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8s-Rf-8hL">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="1" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter your surname" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="E8s-Rf-8hL">
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="done"/>
+                                                    <connections>
+                                                        <action selector="actionTextFieldTextChanged:" destination="gZv-ZW-Mre" eventType="editingDidEnd" id="dO7-NY-bmB"/>
+                                                        <outlet property="delegate" destination="gZv-ZW-Mre" id="ETU-wQ-87k"/>
+                                                    </connections>
                                                 </textField>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Surname" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MAP-eu-FWl">
                                                     <rect key="frame" x="18" y="-1" width="108" height="44"/>
@@ -368,6 +376,9 @@
                                                         <segment title="Male"/>
                                                         <segment title="Female"/>
                                                     </segments>
+                                                    <connections>
+                                                        <action selector="actionGenderControlValueChanged:" destination="gZv-ZW-Mre" eventType="valueChanged" id="BaT-mW-EiQ"/>
+                                                    </connections>
                                                 </segmentedControl>
                                             </subviews>
                                             <constraints>
@@ -459,11 +470,12 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your date of birth" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFn-F4-yom">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="2" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your date of birth" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFn-F4-yom">
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="actionTextFieldTextChanged:" destination="gZv-ZW-Mre" eventType="editingChanged" id="rqS-zn-I0A"/>
                                                         <outlet property="delegate" destination="gZv-ZW-Mre" id="8IE-X2-5zx"/>
                                                     </connections>
                                                 </textField>
@@ -557,11 +569,12 @@
                                                         </mask>
                                                     </variation>
                                                 </label>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your education" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqE-sT-ecd">
+                                                <textField opaque="NO" clipsSubviews="YES" tag="3" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose your education" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fqE-sT-ecd">
                                                     <rect key="frame" x="332" y="7" width="250" height="30"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                     <connections>
+                                                        <action selector="actionTextFieldTextChanged:" destination="gZv-ZW-Mre" eventType="editingChanged" id="opk-Vc-vsv"/>
                                                         <outlet property="delegate" destination="gZv-ZW-Mre" id="DCg-WN-jLw"/>
                                                     </connections>
                                                 </textField>
@@ -815,7 +828,7 @@
         <!--Date of birth-->
         <scene sceneID="blP-DO-NS4">
             <objects>
-                <viewController storyboardIdentifier="DatePickerController" id="vcA-6P-NBD" customClass="RJDatePickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RJDatePickerViewController" id="vcA-6P-NBD" customClass="RJDatePickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7cW-z1-hjK"/>
                         <viewControllerLayoutGuide type="bottom" id="YCf-wu-3Ur"/>
@@ -829,18 +842,19 @@
                                 <date key="date" timeIntervalSinceReferenceDate="444487724.10499603">
                                     <!--2015-02-01 12:48:44 +0000-->
                                 </date>
-                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
-                                    <rect key="frame" x="16" y="319" width="368" height="162"/>
+                                <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="16" y="344" width="368" height="162"/>
                                 </variation>
-                                <connections>
-                                    <action selector="actionDatePickerValueChanged:" destination="vcA-6P-NBD" eventType="valueChanged" id="3W1-yZ-3uY"/>
-                                </connections>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="Yco-0Y-SoX" secondAttribute="centerY" constant="-24" id="H6S-Cy-s6M"/>
-                            <constraint firstAttribute="centerX" secondItem="Yco-0Y-SoX" secondAttribute="centerX" constant="2.5" id="QVb-9n-Gb9"/>
+                            <constraint firstAttribute="centerY" secondItem="Yco-0Y-SoX" secondAttribute="centerY" constant="-24" id="H6S-Cy-s6M">
+                                <variation key="heightClass=regular-widthClass=compact" constant="-25"/>
+                            </constraint>
+                            <constraint firstAttribute="centerX" secondItem="Yco-0Y-SoX" secondAttribute="centerX" constant="2.5" id="QVb-9n-Gb9">
+                                <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
+                            </constraint>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Date of birth" id="Upe-bI-iUb">

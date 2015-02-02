@@ -11,7 +11,7 @@
 @protocol RJDatePickerViewDelegate;
 
 @interface RJDatePickerViewController : UIViewController
-@property (strong, nonatomic) id <RJDatePickerViewDelegate> delegate;
+@property (weak, nonatomic) id <RJDatePickerViewDelegate> delegate;
 @property (strong, nonatomic) NSDate *dateOfBirth;
 @property (strong, nonatomic) NSDate *currentDateOfBirth;
 
@@ -19,9 +19,9 @@
 @property (weak, nonatomic) IBOutlet UIDatePicker *datePicker;
 
 - (IBAction)actionDoneButtonPushed:(UIBarButtonItem *)sender;
-- (IBAction)actionDatePickerValueChanged:(UIDatePicker *)sender;
 @end
 
 @protocol RJDatePickerViewDelegate <NSObject>
-- (void)setDateOfBirthFromDate:(NSDate *)date;
+@required
+- (void)didFinishEditingDate:(NSDate *)date;
 @end

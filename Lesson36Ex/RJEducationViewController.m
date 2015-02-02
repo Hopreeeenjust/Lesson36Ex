@@ -1,4 +1,4 @@
-//
+ //
 //  RJEducationViewController.m
 //  Lesson36Ex
 //
@@ -9,7 +9,7 @@
 #import "RJEducationViewController.h"
 
 @interface RJEducationViewController ()
-@property (strong, nonatomic) NSIndexPath *lastIndexPath;
+
 @end
 
 @implementation RJEducationViewController
@@ -18,17 +18,22 @@
     [super viewDidLoad];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if (self.lastIndexPath) {
+        UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:self.lastIndexPath];
+        [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    }
 }
 
-- (void)dealloc {
-    NSLog(@"education deallocated");
+- (void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
 }
 
 #pragma mark - Actions
 
 - (IBAction)actionDoneButtonPushed:(UIBarButtonItem *)sender {
+    [self.delegate didChoseEducation:self.education atIndexPath:self.lastIndexPath];
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
@@ -38,8 +43,14 @@
     if (self.lastIndexPath) {
         [[tableView cellForRowAtIndexPath:self.lastIndexPath] setAccessoryType:UITableViewCellAccessoryNone];
     }
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [[tableView cellForRowAtIndexPath:indexPath] setAccessoryType:UITableViewCellAccessoryCheckmark];
+    [cell setAccessoryType:UITableViewCellAccessoryCheckmark];
+    if (cell.detailTextLabel.text) {
+        self.education = [NSString stringWithFormat:@"%@ (%@)", cell.textLabel.text, cell.detailTextLabel.text];
+    } else {
+        self.education = cell.textLabel.text;
+    }
     self.lastIndexPath = indexPath;
 }
 

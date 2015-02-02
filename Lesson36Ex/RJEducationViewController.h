@@ -8,6 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
+@protocol RJEducationViewDelegate;
+
 @interface RJEducationViewController : UITableViewController
+@property (weak, nonatomic) id <RJEducationViewDelegate> delegate;
+@property (strong, nonatomic) NSIndexPath *lastIndexPath;
+@property (strong, nonatomic) NSString *education;
+
 - (IBAction)actionDoneButtonPushed:(UIBarButtonItem *)sender;
+@end
+
+@protocol RJEducationViewDelegate <NSObject>
+@required
+- (void)didChoseEducation:(NSString *)education atIndexPath:(NSIndexPath *)indexPath;
 @end
